@@ -38,12 +38,5 @@ public class Student {
         students.add(new Student("Shehanza",31));
         return students;
 
-
-
-
-
-
-
-
     }
 }
