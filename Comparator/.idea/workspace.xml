@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8d3f50a-5f00-46cd-ba28-e247bc566db7" name="Default Changelist" comment="" />
+    <list default="true" id="98f6d942-a0b5-4859-bc2b-257327fce770" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +15,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1Pm6ESNrbQ3YgkIRyFzV5ijC2te" />
+  <component name="ProjectId" id="1PxIqvjlXycRLdVdaJYkwKfAFBD" />
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -28,16 +28,33 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="Comparator" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b8d3f50a-5f00-46cd-ba28-e247bc566db7" name="Default Changelist" comment="" />
-      <created>1566466812348</created>
+      <changelist id="98f6d942-a0b5-4859-bc2b-257327fce770" name="Default Changelist" comment="" />
+      <created>1566809514328</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1566466812348</updated>
+      <updated>1566809514328</updated>
     </task>
     <servers />
   </component>
