@@ -4,7 +4,8 @@ class Application{
 
 		Employee e1=new Employee();
 
-		e1.setName("Steffan");
-		e1.getName();
+		
+		
+		System.out.println(e1.getName());
 	}
 }
