@@ -12,12 +12,20 @@ public class Main {
 
         //Printing original list
         System.out.println(s);
+
+        //Sorted with Stream
+        sortWithStream.sort(s);
+        System.out.println(s);
+
         //Sorting with traditional method
         Collections.sort(s, new IdComparator());
         System.out.println(s);
+
         //Sorting with Lambda
         sortWithLambda.sort(s);
         System.out.println(s);
+
+
 
     }
 }

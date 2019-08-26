@@ -23,8 +23,6 @@ public class filter {
             }
         }
     }
-
-
     static void processWithStream() {
         List<Student> students = Student.getStudent().stream().map(s -> new Student("Dr." + s.getName(), s.getId())).collect(Collectors.toList());
         System.out.println(students);
