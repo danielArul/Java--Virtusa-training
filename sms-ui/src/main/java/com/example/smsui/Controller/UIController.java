@@ -1,4 +1,4 @@
-package com.example.demo.Controller;
+package com.example.smsui.Controller;
 
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -6,11 +6,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
 @EnableOAuth2Sso
-public class UIController extends WebSecurityConfigurerAdapter{
+@Controller
+public class UIController extends WebSecurityConfigurerAdapter {
 
-    protected void configure(HttpSecurity http) throws Exception{
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/")
                 .permitAll()
@@ -27,4 +28,5 @@ public class UIController extends WebSecurityConfigurerAdapter{
     public  String loadreport(){
         return "home";
     }
+
 }
