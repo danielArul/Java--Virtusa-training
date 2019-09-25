@@ -1,9 +1,9 @@
-package com.example1.SpringJPAExample;
+package lk.codelabs.spingdatajpaexample;
 
-import com.example1.SpringJPAExample.model.Address;
-import com.example1.SpringJPAExample.model.Student;
-import com.example1.SpringJPAExample.model.Telephone;
-import com.example1.SpringJPAExample.service.StudentServiceImpl;
+import lk.codelabs.spingdatajpaexample.model.Address;
+import lk.codelabs.spingdatajpaexample.model.Student;
+import lk.codelabs.spingdatajpaexample.model.Telephone;
+import lk.codelabs.spingdatajpaexample.service.studentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +21,7 @@ public class StudentController {
     }
 
     @Autowired
-    StudentServiceImpl studentService;
+    studentServiceImpl studentService;
 
     @RequestMapping(value = "/student",method = RequestMethod.POST)
     public Student save(@RequestBody Student student){

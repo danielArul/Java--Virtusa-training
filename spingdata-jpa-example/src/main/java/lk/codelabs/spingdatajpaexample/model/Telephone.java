@@ -1,4 +1,4 @@
-package com.example1.SpringJPAExample.model;
+package lk.codelabs.spingdatajpaexample.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
