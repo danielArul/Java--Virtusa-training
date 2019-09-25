@@ -1,3 +1,4 @@
+
 package lk.codelabs.spingdatajpaexample.model;
 
 import javax.persistence.Entity;
@@ -7,10 +8,17 @@ import javax.persistence.Id;
 
 @Entity
 public class Address {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer aid;
-    private String  name;
+
+    private String city;
+
+    public String getCity() { return city; }
+
+    public void setCity(String city) { this.city = city; }
 
     public Integer getAid() {
         return aid;
@@ -20,11 +28,5 @@ public class Address {
         this.aid = aid;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }

@@ -15,47 +15,54 @@ import java.util.Optional;
 @RequestMapping(value = "/sms")
 public class StudentController {
 
-    @RequestMapping(value = "/hello")
-    public String greetings(){
-        return  "Hello Springboot";
-    }
 
     @Autowired
     studentServiceImpl studentService;
 
-    @RequestMapping(value = "/student",method = RequestMethod.POST)
-    public Student save(@RequestBody Student student){
-        return studentService.save(student);
+
+    @RequestMapping(value = "/hello")
+    public String greetings(){
+        return "Hello Springboot";
     }
+
 
     @RequestMapping(value = "/student",method = RequestMethod.GET)
-    public List<Student> getAllStudent(){
-        return studentService.getAllStudents();
-    }
-
-    @RequestMapping(value = "/student/{id}",method = RequestMethod.GET)
-    public Optional<Student> getStudent(@PathVariable int id){
-        return studentService.getStudent(id);
-    }
-
-    @RequestMapping(value = "/Student",method = RequestMethod.GET)
     public Student getStudent(){
-        Student student=new Student();
+
+        Student student = new Student();
         student.setName("Saman");
-
-        Address address=new Address();
-        address.setName("Galle");
-
+        Address address = new Address();
+        address.setCity("Galle");
         student.setAddress(address);
 
-        List<Telephone> telephones=new ArrayList<>();
-        Telephone telephone=new Telephone();
-        telephone.setNumber("1234567890");
-        telephone.setStudent(student);
+        List <Telephone>  telephones = new ArrayList<>();
+        Telephone telephone = new Telephone();
+        telephone.setNumber("045454535353");
         telephones.add(telephone);
+        telephone.setStudent(student);
 
-        student.setTelephone(telephones);
+        student.setTelephones(telephones);
 
-        return  student;
+        return student;
     }
+
+    @RequestMapping(value = "/student",method = RequestMethod.POST)
+    public Student save(@RequestBody Student student){
+
+        return studentService.save(student);
+
+    }
+
+    @RequestMapping(value = "/allstudent",method = RequestMethod.GET)
+    public List<Student> getStudents(){
+
+        return studentService.getStudents();
+    }
+
+    @RequestMapping(value = "/find/{id}",method = RequestMethod.GET)
+    public Optional<Student> getStudentById(@PathVariable int id){
+
+        return studentService.getStudentById(id);
+    }
+
 }

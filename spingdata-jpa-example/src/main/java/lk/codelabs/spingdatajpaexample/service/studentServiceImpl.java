@@ -12,24 +12,29 @@ import java.util.Optional;
 @Service
 public class studentServiceImpl {
 
+
     @Autowired
-    repositoryImpl repositoryImpl;
+    repositoryImpl studentRepository;
 
-    public  Student save(Student s){
-        for(Telephone telephone:s.getTelephone()){
-            telephone.setStudent(s);
+
+    public Student save(Student student) {
+
+        for(Telephone telephone:student.getTelephones()){
+            telephone.setStudent(student);
         }
-        repositoryImpl.save(s);
-        return s;
+
+        return studentRepository.save(student);
     }
 
-    public List<Student> getAllStudents() {
-        List<Student> students = repositoryImpl.findAll();
-        return students;
+    public List<Student> getStudents(){
+
+        return studentRepository.findAll();
     }
 
-    public Optional<Student> getStudent(int id) {
-        Optional<Student> student = repositoryImpl.findById(id);
-        return student;
+    public Optional<Student> getStudentById(int id){
+
+        return studentRepository.findById(id);
     }
+
+
 }

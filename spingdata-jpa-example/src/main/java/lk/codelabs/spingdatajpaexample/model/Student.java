@@ -1,38 +1,23 @@
 package lk.codelabs.spingdatajpaexample.model;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class Student {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Integer sid;
+    private Integer sid;
 
-    private  String name;
+    private String name;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private  Address address;
-
-    public List<Telephone> getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(List<Telephone> telephone) {
-        this.telephone = telephone;
-    }
+    private Address address;
 
     @OneToMany(mappedBy = "student",cascade = CascadeType.ALL)
     private List<Telephone> telephone;
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 
     public Integer getSid() {
         return sid;
@@ -48,5 +33,21 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public List<Telephone> getTelephones() {
+        return telephone;
+    }
+
+    public void setTelephones(List<Telephone> telephones) {
+        this.telephone = telephones;
     }
 }
