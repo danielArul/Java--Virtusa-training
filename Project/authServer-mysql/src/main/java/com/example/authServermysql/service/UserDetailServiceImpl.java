@@ -25,7 +25,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
         optionalUser.orElseThrow(() -> new UsernameNotFoundException("Username or password wrong"));
 
-        UserDetails userDetails = new AuthUserDetail(Optional.get());
+        UserDetails userDetails = new AuthUserDetail(optionalUser.get());
         new AccountStatusUserDetailsChecker().check(userDetails);
         return userDetails;
 

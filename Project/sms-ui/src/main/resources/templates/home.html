@@ -29,15 +29,27 @@
     <button data-toggle="collapse" data-target="#fetchAll">Fetch All</button>
 
     <div id="create" class="collapse">
-        Creating data
+        <form action="/addStudent">
+            Student name:<br>
+            <input type="text" name="sname" >
+            <br>
+            Student name:<br>
+            <input type="text" name="sid" >
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
     </div>
 
     <div id="update" class="collapse">
-        Updating data
+        <form action="/updateStudent">
+            Enter Student ID to update name:<br>
+            <input type="text" name="sid">
+            <input type="submit" value="Submit">
+        </form>
     </div>
 
     <div id="fetch" class="collapse">
-        fetching data
+
     </div>
 
     <div id="fetchAll" class="collapse">
