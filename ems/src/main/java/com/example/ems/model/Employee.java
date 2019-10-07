@@ -14,7 +14,7 @@ public class Employee {
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
 
-    @OneToMany(mappedBy = "student",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "employee",cascade = CascadeType.ALL)
     private List<Telephone> telephone;
 
     public Integer getEid() {
