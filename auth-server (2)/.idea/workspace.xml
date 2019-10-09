@@ -1,47 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d24090ea-8c9b-4ef9-8499-98aabe20f674" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rentcloud/auth/authserver/AuthServerApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rentcloud/auth/authserver/conf/AuthServerConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rentcloud/auth/authserver/conf/UserConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/rentcloud/auth/authserver/AuthServerApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems-ui/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems-ui/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems-ui/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems-ui/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems-ui/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems-ui/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems-ui/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems-ui/src/main/java/com/example/emsui/EmsUiApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems-ui/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems-ui/src/main/resources/templates/Create.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems-ui/src/test/java/com/example/emsui/EmsUiApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems/src/main/java/com/example/ems/EmsApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems/src/main/java/com/example/ems/controller/EmployeeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems/src/main/java/com/example/ems/model/Address.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems/src/main/java/com/example/ems/model/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems/src/main/java/com/example/ems/model/Telephone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems/src/main/java/com/example/ems/repository/EmployeeRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems/src/main/java/com/example/ems/service/EmployeeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ems/src/test/java/com/example/ems/EmsApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="d24090ea-8c9b-4ef9-8499-98aabe20f674" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

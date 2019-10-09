@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/styleMe.css}"/>
+
+</head>
+<body background="bg.jpg">
+
+    <div class="topnav">
+        <a class="active" href="#home">Employees</a>
+        <a href="#projects">Projects</a>
+        <a href="#Tasks">Tasks</a>
+        <a href="#Operations">Operations</a>
+    </div>
+
+    <h1>Welcome to the employment management portal!</h1>
+    <span th:text="${var}"></span>
+
+    <table>
+        <tr th:each>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>
