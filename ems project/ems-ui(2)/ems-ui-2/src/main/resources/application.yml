@@ -8,7 +8,8 @@ security:
     resource:
       token-info-uri: http://localhost:8282/oauth/check_token
 
-server:
+erver:
+  port: 8080
   servlet:
     session:
       cookie:
@@ -17,12 +18,8 @@ server:
 spring:
   resources:
     add-mappings: true
-
-
   datasource:
     url: jdbc:mysql://localhost:3306/jpadb?createDatabaseIfNotExist=true
     username: root
     password: 1qaz2wsx@
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-

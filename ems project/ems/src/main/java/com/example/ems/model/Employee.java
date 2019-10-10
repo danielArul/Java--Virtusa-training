@@ -9,7 +9,6 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer eid;
-
     String ename;
 
     @ManyToMany

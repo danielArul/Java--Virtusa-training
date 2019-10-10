@@ -11,7 +11,6 @@ public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer pid;
-
     String pname;
 
     @ManyToMany(mappedBy = "projects")
