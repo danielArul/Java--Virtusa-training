@@ -10,13 +10,8 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer eid;
     String ename;
-
-    @ManyToMany
-    @JoinTable(
-            name = "emp_project",
-            joinColumns = @JoinColumn(name = "eid"),
-            inverseJoinColumns = @JoinColumn(name = "pid"))
-    private List<Project> projects;
+    String email;
+    String desigation;
 
     public Integer getEid() {
         return eid;
@@ -34,11 +29,30 @@ public class Employee {
         this.ename = ename;
     }
 
-    public List<Project> getProjects() {
-        return projects;
+    public String getEmail() {
+        return email;
     }
 
-    public void setProjects(List<Project> projects) {
-        this.projects = projects;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getDesigation() {
+        return desigation;
+    }
+
+    public void setDesigation(String desigation) {
+        this.desigation = desigation;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "eid=" + eid +
+                ", ename='" + ename + '\'' +
+                ", email='" + email + '\'' +
+                ", desigation='" + desigation + '\'' +
+                '}';
     }
 }

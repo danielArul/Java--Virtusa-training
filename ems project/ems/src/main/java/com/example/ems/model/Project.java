@@ -13,17 +13,6 @@ public class Project {
     Integer pid;
     String pname;
 
-    @ManyToMany(mappedBy = "projects")
-    @JsonIgnore
-    List<Employee> employees;
-
-    @ManyToMany
-    @JoinTable(
-            name = "project_task",
-            joinColumns = @JoinColumn(name = "pid"),
-            inverseJoinColumns = @JoinColumn(name = "tid"))
-    private List<Task> tasks;
-
     public Integer getPid() {
         return pid;
     }
@@ -40,19 +29,11 @@ public class Project {
         this.pname = pname;
     }
 
-    public List<Employee> getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(List<Employee> employees) {
-        this.employees = employees;
-    }
-
-    public List<Task> getTasks() {
-        return tasks;
-    }
-
-    public void setTasks(List<Task> tasks) {
-        this.tasks = tasks;
+    @Override
+    public String toString() {
+        return "Project{" +
+                "pid=" + pid +
+                ", pname='" + pname + '\'' +
+                '}';
     }
 }

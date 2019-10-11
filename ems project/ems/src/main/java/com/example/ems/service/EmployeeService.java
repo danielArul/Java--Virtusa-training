@@ -19,11 +19,6 @@ public class EmployeeService {
     EmployeeRepo employeeRepository;
 
     public Employee save(Employee employee) {
-
-        for(Project project:employee.getProjects()){
-            project.setEmployees((List<Employee>) employee);
-        }
-
         return employeeRepository.save(employee);
     }
 
@@ -35,5 +30,9 @@ public class EmployeeService {
     public Optional<Employee> getEmployeeById(int id) {
 
         return employeeRepository.findById(id);
+    }
+
+    public void deleteEmployeeById(int id){
+        employeeRepository.deleteById(id);
     }
 }

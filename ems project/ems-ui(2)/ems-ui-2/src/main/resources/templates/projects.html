@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--    external css-->
-    <link rel="stylesheet" th:href="@{styleMe.css}">
+    <link rel="stylesheet" th:href="@{/styleMe.css}">
     <title>EMS</title>
 </head>
 <body background="bg.jpg">
@@ -46,7 +46,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="employee: ${employees}">
+                <tr th:each="projects: ${projects}">
                     <td><span th:text="${project.pid}"></span></td>
                     <td><span th:text="${project.pname}"></span></td>
                     <td><a href="#view">view</a></td>
@@ -54,6 +54,8 @@
                 </tbody>
             </table>
         </div>
+    </div>
+</div>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

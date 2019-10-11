@@ -11,13 +11,7 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer tid;
-
     String tname;
-
-    @ManyToMany(mappedBy = "tasks")
-    @JsonIgnore
-    List<Project> projects;
-
 
     public Integer getTid() {
         return tid;
@@ -35,11 +29,11 @@ public class Task {
         this.tname = tname;
     }
 
-    public List<Project> getProjects() {
-        return projects;
-    }
-
-    public void setProjects(List<Project> projects) {
-        this.projects = projects;
+    @Override
+    public String toString() {
+        return "Task{" +
+                "tid=" + tid +
+                ", tname='" + tname + '\'' +
+                '}';
     }
 }

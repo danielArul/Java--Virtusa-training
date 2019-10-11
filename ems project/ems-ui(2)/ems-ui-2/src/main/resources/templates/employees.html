@@ -8,17 +8,26 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--    external css-->
-    <link rel="stylesheet" th:href="@{styleMe.css}">
+    <link rel="stylesheet" th:href="@{/css/styleMe.css}"/>
     <title>EMS</title>
 </head>
 
-<body background="bg.jpg">
+<body>
+
+<div th:id="topnav">
+    <a th:href="@{/employees}">Employees</a>
+    <a href="#projects">Projects</a>
+    <a href="#Tasks">Tasks</a>
+    <a href="#Operations">Operations</a>
+</div>
+
 
 <div class="container m-5 pb-5">
-    <div class="jumbotron bg-danger text-red" >
-<h1>Employee Information</h1>
+    <h1><font color="Red">Employee Information</font></h1>
+    <div class="jumbotron" >
+
 <div th:unless="${error==null}">
-    <table class="table table-striped table-bordered table-hover table-condensed">
+    <table class="table-bordered">
         <thead>
         <tr>
         <td>Status code</td>
@@ -37,18 +46,22 @@
 </div>
 
 <div th:if="${error==null}">
-    <table class="table table-striped table-bordered table-hover table-condensed">
+    <table class="table table-bordered text-center">
         <thead>
         <tr>
             <td>ID</td>
             <td>Name</td>
-            <td></td>
+            <td>E-mail</td>
+            <td>Designation</td>
+            <td>More Info</td>
         </tr>
         </thead>
         <tbody>
         <tr th:each="employee: ${employees}">
             <td><span th:text="${employee.eid}"></span></td>
             <td><span th:text="${employee.name}"></span></td>
+            <td><span th:text="${employee.email}"></span></td>
+            <td><span th:text="${employee.designation}"></span></td>
             <td><a href="#view">view</a></td>
         </tr>
         </tbody>
@@ -56,13 +69,7 @@
 </div>
 
 </div>
-
-
 </div>
-
-
-
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

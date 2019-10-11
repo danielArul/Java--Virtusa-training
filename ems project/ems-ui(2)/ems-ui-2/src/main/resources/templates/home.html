@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" th:href="@{/styleMe.css}"/>
+    <link rel="stylesheet" th:href="@{/css/styleMe.css}"/>
 
 </head>
-<body background="bg.jpg">
+<body>
 
-    <div class="topnav">
+    <div th:id="topnav">
         <a th:href="@{/employees}">Employees</a>
         <a href="#projects">Projects</a>
         <a href="#Tasks">Tasks</a>
@@ -16,16 +16,7 @@
     </div>
 
     <h1 class="text-white">You've successfully logged in!</h1>
-<!--    <span th:text="${var}"></span>-->
 
-<!--    <table>-->
-<!--        <tr th:each>-->
-<!--            <td></td>-->
-<!--            <td></td>-->
-<!--            <td></td>-->
-<!--        </tr>-->
-<!--    </table>-->
 
-</div>
 </body>
 </html>

@@ -21,13 +21,13 @@ public class AppController extends WebSecurityConfigurerAdapter {
 
     @RequestMapping(value = "/")
     public  String loadHome(){
-        return "index";
+        return "create-employee";
     }
 
-    @RequestMapping(value = "/home")
-    public  String loadreport(){
-        return "home";
-    }
+//    @RequestMapping(value = "/home")
+//    public  String loadreport(){
+//        return "";
+//    }
 
 
 
