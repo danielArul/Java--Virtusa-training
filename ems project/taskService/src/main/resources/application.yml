@@ -1,0 +1,23 @@
+security:
+  oauth2:
+    client:
+      client-id: web
+      client-secret: webpass
+    resource:
+      token-info-uri: http://localhost:8282/oauth/check_token
+spring:
+  datasource:
+    initialization-mode: always
+    url: jdbc:mysql://localhost:3306/ems?createDatabaseIfNotExist=true
+    username: root
+    password: 1qaz2wsx@
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+  application:
+    name: profile
+
+server:
+  port: 8083
+

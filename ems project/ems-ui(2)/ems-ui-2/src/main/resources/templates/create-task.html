@@ -16,24 +16,19 @@
 <body>
 <div th:id="topnav">
     <a th:href="@{/employees}">Employees</a>
-    <a href="#projects">Projects</a>
-    <a href="#Tasks">Tasks</a>
-    <a href="#Operations">Operations</a>
+    <a th:href="@{/projects}">Projects</a>
+    <a th:href="@{/tasks}">Tasks</a>
+    <a th:href="@{/operations}">Operations</a>
 </div>
 
 <div class="container m-5 pb-5">
     <div class="jumbotron card card-image">
         <h1 align="center">CREATE EMPLOYEE</h1>
         <div>
-            <form action="/action_page.php">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Employee name..">
+            <form action="">
+                <label for="name">Task Name</label>
+                <input type="text" id="name" name="name" placeholder="Task name..">
 
-                <label for="email">E-mail</label>
-                <input type="text" id="email" name="email" placeholder="Employee e-mail..">
-
-                <label for="designation">Designation</label>
-                <input type="text" id="designation" name="designation" placeholder="Employee designation..">
 
                 <input class="btn btn-success" type="submit" value="Submit">
             </form>

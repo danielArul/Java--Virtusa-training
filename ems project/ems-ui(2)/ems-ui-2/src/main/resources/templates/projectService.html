@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.com">
+
+<head>
+
+</head>
+<body>
+
+<div th:if="${error==null}">
+    <table class="table table-bordered text-center">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>E-mail</td>
+            <td>Designation</td>
+            <td>More Info</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="emp: ${Employees}">
+            <td><span th:text="${emp.eid}"></span></td>
+            <td><span th:text="${emp.name}"></span></td>
+            <td><span th:text="${emp.email}"></span></td>
+            <td><span th:text="${emp.desig}"></span></td>
+            <td><a href="#view">view</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+</body>
+</html>

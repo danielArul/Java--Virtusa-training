@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--    external css-->
-    <link rel="stylesheet" href="styleMe.css" th:href="@{styleMe.css}">
+    <link rel="stylesheet" href="styleMe.css" th:href="@{/css/styleMe.css}">
     <title>EMS</title>
 </head>
 
@@ -41,14 +41,14 @@
                 <thead>
                 <tr>
                     <td>ID</td>
-                    <td>Name</td>
+                    <td>Task name: Name</td>
                     <td></td>
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="employee: ${employees}">
-                    <td><span th:text="${employee.eid}"></span></td>
-                    <td><span th:text="${employee.name}"></span></td>
+                <tr th:each="task: ${Tasks}">
+                    <td><span th:text="${task.tid}"></span></td>
+                    <td><span th:text="${task.tname}"></span></td>
                     <td><a href="#view">view</a></td>
                 </tr>
                 </tbody>

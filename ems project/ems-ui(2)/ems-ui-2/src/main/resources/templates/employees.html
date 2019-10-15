@@ -16,9 +16,9 @@
 
 <div th:id="topnav">
     <a th:href="@{/employees}">Employees</a>
-    <a href="#projects">Projects</a>
-    <a href="#Tasks">Tasks</a>
-    <a href="#Operations">Operations</a>
+    <a th:href="@{/projects}">Projects</a>
+    <a th:href="@{/tasks}">Tasks</a>
+    <a th:href="@{/operations}">Operations</a>
 </div>
 
 
@@ -57,11 +57,11 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="employee: ${employees}">
-            <td><span th:text="${employee.eid}"></span></td>
-            <td><span th:text="${employee.name}"></span></td>
-            <td><span th:text="${employee.email}"></span></td>
-            <td><span th:text="${employee.designation}"></span></td>
+        <tr th:each="emp: ${Employees}">
+            <td><span th:text="${emp.eid}"></span></td>
+            <td><span th:text="${emp.name}"></span></td>
+            <td><span th:text="${emp.email}"></span></td>
+            <td><span th:text="${emp.desig}"></span></td>
             <td><a href="#view">view</a></td>
         </tr>
         </tbody>

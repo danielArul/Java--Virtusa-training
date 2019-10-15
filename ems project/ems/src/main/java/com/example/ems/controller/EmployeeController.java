@@ -9,29 +9,31 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value = "/ems")
+@RequestMapping(value = "/empl")
 public class EmployeeController {
 
     @Autowired
     EmployeeService employeeService;
 
-    @RequestMapping(value = "/employees",method = RequestMethod.POST)
-    public Employee save(@RequestBody Employee employee){
-
+    @PostMapping(path="/employee")
+    public Employee addEmployee(@RequestBody Employee employee)
+    {
         return employeeService.save(employee);
 
     }
-
-    @RequestMapping(value = "/employees",method = RequestMethod.GET)
-    public List<Employee> getEmployees(){
-
+    @GetMapping(path="/employees")
+    public List<Employee> getEmployees()
+    {
         return employeeService.getEmployees();
+
+
     }
+    @RequestMapping("/employee/{eid}")
+    public Optional<Employee> getProject(@PathVariable("eid")int eid)
+    {
+        return employeeService.getEmployeeById(eid);
 
-    @RequestMapping(value = "/employee/{id}",method = RequestMethod.GET)
-    public Optional<Employee> getEmployeeById(@PathVariable int id){
 
-        return employeeService.getEmployeeById(id);
     }
 
 
