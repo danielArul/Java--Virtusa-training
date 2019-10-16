@@ -1,5 +1,6 @@
 package com.steffan.employeeService;
 
+import com.steffan.employeeService.model.EPTdto;
 import com.steffan.employeeService.model.Employee;
 import com.steffan.employeeService.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,10 @@ public class AppController {
 
     }
 
+    @RequestMapping(value = "ems/operation", method=RequestMethod.POST)
+    public void createOperation(@RequestBody EPTdto eptdto){
+        System.out.println(eptdto);
+                employeeService.addCreation(eptdto);
+    }
 
 }

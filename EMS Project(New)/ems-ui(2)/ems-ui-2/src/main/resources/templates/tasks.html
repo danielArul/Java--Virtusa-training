@@ -19,12 +19,48 @@
     <a th:href="@{/projects}">Projects</a>
     <a th:href="@{/tasks}">Tasks</a>
     <a th:href="@{/operations}">Operations</a>
-    <a style="float:right" th:href="@{/home}">Home</a>
+    <a th:href="@{/home}" style="float:right" > <img th:src="@{/img/home.png}" height="50px" /></a>
 </div>
 
 <div class="container m-5 pb-5">
-    <h1><font color="Red">Task Information</font></h1>
-    <div class="jumbotron" >
+    <div class="no-border">
+        <table>
+            <tr>
+                <td><h1><font color="Red">Task Information</font></h1></td>
+                <td>
+                    <button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal"
+                            data-target="#myModal">Add Task</button></td>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+     <div class="jumbotron" >
+
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Create Task</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body modal-footer">
+                        <form th:action="@{/ems/task}" method="post">
+                            <label for="name">Task Name</label>
+                            <input type="text" id="name" name="tname" placeholder="Task name..">
+
+
+                            <button class="btn btn-success" type="submit" value="Submit">Create</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div th:unless="${error==null}">
             <table class="table table-striped table-bordered table-hover table-condensed">
                 <thead>
@@ -49,7 +85,7 @@
                 <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
-                    <th>Task name/td>
+                    <th>Task name</td>
                     <th>More</th>
                 </tr>
                 </thead>

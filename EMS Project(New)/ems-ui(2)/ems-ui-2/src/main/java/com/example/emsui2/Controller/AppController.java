@@ -1,6 +1,10 @@
 package com.example.emsui2.Controller;
 
 
+import com.example.emsui2.model.EPTdto;
+import com.example.emsui2.model.Employee;
+import com.example.emsui2.model.Project;
+import com.example.emsui2.model.Task;
 import com.example.emsui2.service.UIservice;
 import org.bouncycastle.pqc.crypto.sphincs.SPHINCSPublicKeyParameters;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +56,8 @@ public class AppController extends WebSecurityConfigurerAdapter {
         return "projects";
     }
 
+
+
     @RequestMapping("/tasks")
     public String task(Model model){
         System.out.println(uIservice.allTasks());
@@ -66,9 +72,59 @@ public class AppController extends WebSecurityConfigurerAdapter {
 
 
     @RequestMapping(value = "/")
-      public  String loadIndex(){
+    public  String loadIndex(){
       return "home";
   }
+
+    @RequestMapping(value="/ems/employee" ,method = RequestMethod.POST)
+    public String createEmployee(@ModelAttribute Employee employee){
+        uIservice.addEmployee(employee);
+        return "redirect:/employees";
+    }
+
+    @RequestMapping(value="/ems/project" ,method = RequestMethod.POST)
+    public String createProject(@ModelAttribute Project project){
+        uIservice.addProject(project);
+        return "redirect:/projects";
+    }
+
+    @RequestMapping(value="/ems/task" ,method = RequestMethod.POST)
+    public String createTask(@ModelAttribute Task task){
+        System.out.println("test"+task);
+        uIservice.addTask(task);
+        return "redirect:/tasks";
+    }
+
+    @RequestMapping("/operations")
+    public String operations(Model model){
+
+        List<Employee> employees =new ArrayList<>();
+        for(Employee e: uIservice.allEmployees()){
+            employees.add(e);
+        }
+        List<Project> projects =new ArrayList<>();
+        for(Project e: uIservice.allProjects()){
+            projects.add(e);
+        }
+        List<Task> tasks =new ArrayList<>();
+        for(Task e: uIservice.allTasks()){
+            tasks.add(e);
+        }
+
+        model.addAttribute("employees",employees);
+        model.addAttribute("projects",projects);
+        model.addAttribute("tasks", tasks);
+        return "operations";
+    }
+
+    @RequestMapping(value="/ems/operations", method = RequestMethod.POST)
+    public String operations(@ModelAttribute EPTdto eptdto){
+        System.out.println(eptdto);
+        uIservice.addOperation(eptdto);
+        return "redirect:/operations";
+
+    }
+
 
 
 //

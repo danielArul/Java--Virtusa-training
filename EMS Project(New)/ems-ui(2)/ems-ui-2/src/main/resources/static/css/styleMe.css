@@ -67,3 +67,7 @@ th {
   color: black;
 }
 
+.no-border table{
+border:none;
+}
+
