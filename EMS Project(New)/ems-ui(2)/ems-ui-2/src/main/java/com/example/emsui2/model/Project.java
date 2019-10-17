@@ -28,4 +28,11 @@ public class Project {
         this.pname = pname;
     }
 
+    @Override
+    public String toString() {
+        return "Project{" +
+                "pid=" + pid +
+                ", pname='" + pname + '\'' +
+                '}';
+    }
 }

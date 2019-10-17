@@ -30,71 +30,28 @@
                 <td>
                     <button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal"
                             data-target="#myModal">Add Project</button></td>
-                    </button>
+                </button>
                 </td>
             </tr>
         </table>
     </div>
     <div class="jumbotron">
 
-        <!-- The Modal -->
-        <div class="modal" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Create Project</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body modal-footer">
-                        <form th:action="@{/ems/project}" method="post">
-                            <label for="name">Project Name</label>
-                            <input type="text" id="name" name="pname" placeholder="Project name..">
-
-
-                            <button class="btn btn-success" type="submit" value="Submit">Create</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div th:unless="${error==null}">
-            <table class="table">
-                <thead class="thead-dark">
-                <tr>
-                    <th>Status code</th>
-                    <th>Description</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="danger">
-                    <td><span th:text="${error.statusCode}"></span></td>
-                    <td><span th:text="${error.body}"></span></td>
-                </tr>
-                </tbody>
-            </table>
-
-        </div>
 
         <div th:if="${error==null}">
             <table class="table">
                 <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>View</th>
+                    <th>Task name</td>
+                    <th>More</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="proj: ${Projects}">
-                    <td><span th:text="${proj.pid}"></span></td>
-                    <td><span th:text="${proj.pname}"></span></td>
-                    <td><a href="@{/employee/project/view/task/{pid}(pid=${proj.pid})}">view</a></td>
+                <tr th:each="task: ${tasks}">
+                    <td><span th:text="${task.tid}"></span></td>
+                    <td><span th:text="${task.tname}"></span></td>
+                    <td><a href="#view">view</a></td>
                 </tr>
                 </tbody>
             </table>

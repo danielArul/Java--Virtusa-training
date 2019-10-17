@@ -1,13 +1,11 @@
 package com.steffan.employeeService;
 
+import com.steffan.employeeService.model.EPT;
 import com.steffan.employeeService.model.EPTdto;
 import com.steffan.employeeService.model.Employee;
 import com.steffan.employeeService.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,10 +25,18 @@ public class AppController {
 
     }
 
-    @RequestMapping(value = "ems/operation", method=RequestMethod.POST)
+    @RequestMapping(value = "/ems/operation", method=RequestMethod.POST)
     public void createOperation(@RequestBody EPTdto eptdto){
-        System.out.println(eptdto);
                 employeeService.addCreation(eptdto);
     }
 
+    @RequestMapping(value = "/ems/employee/project/{eid}")
+    public List<Integer> getPids(@PathVariable Integer eid){
+        return employeeService.getPids(eid);
+    }
+
+    @RequestMapping(value = "/ems/employee/project/tasks/{eid}/{pid}")
+    public List<Integer> getTids(@PathVariable Integer eid,@PathVariable Integer pid){
+        return employeeService.getTids(eid,pid);
+    }
 }

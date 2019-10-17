@@ -106,7 +106,7 @@
             <td><span th:text="${emp.name}"></span></td>
             <td><span th:text="${emp.email}"></span></td>
             <td><span th:text="${emp.desig}"></span></td>
-            <td><a data-toggle="viewmodal" data-target="#viewModal">view</a></td>
+            <td><a th:href="@{/employee/project/view/{eid}(eid=${emp.eid})}">Project</a></td>
         </tr>
         </tbody>
     </table>

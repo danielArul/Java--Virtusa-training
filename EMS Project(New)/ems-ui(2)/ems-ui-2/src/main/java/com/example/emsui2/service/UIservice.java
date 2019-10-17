@@ -10,6 +10,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.event.PublicInvocationEvent;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.client.RestTemplate;
@@ -120,8 +121,25 @@ public class UIservice {
 
         HttpEntity<EPTdto> request=new HttpEntity<>(epTdto,header);
         restTemplate.postForEntity("http://localhost:8089/ems/operation",request,EPTdto.class);
+    }
 
+    public List<Project> getEmpProjects(Integer eid){
+        HttpHeaders header=new HttpHeaders();
+        String token=GetToken.getToken();
+        header.set("Authorization", "bearer"+token);
 
+        RestTemplate restTemplate=new RestTemplate();
+
+        HttpEntity<String> request=new HttpEntity<>(header);
+        ResponseEntity<List<Project>> response=restTemplate.exchange("http://localhost:8084/ems/employee/projects/" + eid, HttpMethod.GET, request, new ParameterizedTypeReference<List<Project>>() {
+        });
+        List<Project> projects=response.getBody();
+
+        return projects;
 
     }
+
+
+
+
 }

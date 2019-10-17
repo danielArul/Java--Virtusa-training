@@ -3,10 +3,7 @@ package com.steffan.projectService.controller;
 import com.steffan.projectService.model.Project;
 import com.steffan.projectService.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +23,11 @@ public class ProjectController {
         projectService.addProject(project);
 
     }
+
+    @RequestMapping("/ems/employee/projects/{eid}")
+    public List<Project> getEmpProjects(@PathVariable Integer eid){
+        return projectService.getEmpProjects(eid);
+    }
+
 
 }

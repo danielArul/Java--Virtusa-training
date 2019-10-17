@@ -1,6 +1,7 @@
 package com.example.emsui2.Controller;
 
 
+import com.example.emsui2.config.GetToken;
 import com.example.emsui2.model.EPTdto;
 import com.example.emsui2.model.Employee;
 import com.example.emsui2.model.Project;
@@ -10,6 +11,7 @@ import org.bouncycastle.pqc.crypto.sphincs.SPHINCSPublicKeyParameters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.stereotype.Controller;
@@ -24,6 +26,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpStatusCodeException;
 
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 
@@ -125,6 +128,37 @@ public class AppController extends WebSecurityConfigurerAdapter {
 
     }
 
+@RequestMapping("/employee/project/view/{eid}")
+    public String getEmployeeProject(@PathVariable Integer eid ,Model model){
+        model.addAttribute("projects",uIservice.getEmpProjects(eid));
+        model.addAttribute("eid",eid);
+    System.out.println(uIservice.getEmpProjects(eid));
+        return "proInfo";
+}
+
+    @RequestMapping("/employee/project/view/task/{eid}/{pid}")
+  public String getEmployeeProTasks(@PathVariable Integer eid,@PathVariable Integer pid,Model model){
+        HttpHeaders header=new HttpHeaders();
+        header.add("Authorization","bearer "+ GetToken.getToken());
+        HttpEntity<String> req1=new HttpEntity<>(header);
+        RestTemplate restTemplate=new RestTemplate();
+
+        ResponseEntity<List<Integer>> response=restTemplate.exchange("http://localhost:8089/ems/employee/project/tasks/" + eid + "/" + pid, HttpMethod.GET, req1, new ParameterizedTypeReference<List<Integer>>() {
+        });
+        List<Integer> tids=response.getBody();
+
+        System.out.println(tids);
+        HttpEntity<List<Integer>> req2=new HttpEntity<>(tids,header);
+        ResponseEntity<List<Task>> response1=restTemplate.exchange("http://localhost:8083/ems/project/tasks", HttpMethod.GET, req2, new ParameterizedTypeReference<List<Task>>() {
+        });
+      List<Task> tasks= new ArrayList<>();
+      tasks=response1.getBody();
+        System.out.println(tasks);
+        model.addAttribute("tasks",tasks);
+
+
+        return "taskinfo";
+            }
 
 
 //

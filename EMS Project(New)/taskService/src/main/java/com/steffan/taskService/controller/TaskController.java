@@ -29,4 +29,10 @@ public class TaskController {
         taskService.addTask(task);
 
     }
+
+    @RequestMapping(value = "/ems/project/tasks", method=RequestMethod.GET)
+    public List<Task> getTasks(@RequestBody List<Integer> tids){
+        System.out.println(tids);
+        return taskService.getProjTasks(tids);
+    }
 }
