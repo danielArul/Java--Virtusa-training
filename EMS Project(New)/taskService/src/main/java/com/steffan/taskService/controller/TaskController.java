@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -30,9 +31,10 @@ public class TaskController {
 
     }
 
-    @RequestMapping(value = "/ems/project/tasks", method=RequestMethod.GET)
-    public List<Task> getTasks(@RequestBody List<Integer> tids){
-        System.out.println(tids);
+    @RequestMapping(value = "/ems/project/tasks", method=RequestMethod.POST)
+    public List<Task> getTasksEmp(@RequestBody List<Integer> tids){//@RequestBody List<Integer> tids){
+    //List<Integer> tids= Arrays.asList(1,2,3,4,5);
+        System.out.println("tids");
         return taskService.getProjTasks(tids);
     }
 }

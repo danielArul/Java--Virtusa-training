@@ -34,7 +34,7 @@ input[type=submit] {
 }
 
 table, td, th {
-  border: 1px solid black;
+
 }
 
 table {
@@ -42,9 +42,7 @@ table {
   width: 100%;
 }
 
-th {
-  text-align: left;
-}
+
 
 #topnav {
 
@@ -67,7 +65,4 @@ th {
   color: black;
 }
 
-.no-border table{
-border:none;
-}
 

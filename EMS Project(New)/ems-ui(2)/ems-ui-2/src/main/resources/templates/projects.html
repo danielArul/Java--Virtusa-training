@@ -23,18 +23,6 @@
 </div>
 <div class="container m-5 pb-5">
 
-    <div class="no-border">
-        <table>
-            <tr>
-                <td><h1><font color="Red">Project Information</font></h1></td>
-                <td>
-                    <button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal"
-                            data-target="#myModal">Add Project</button></td>
-                    </button>
-                </td>
-            </tr>
-        </table>
-    </div>
     <div class="jumbotron">
 
         <!-- The Modal -->
@@ -64,7 +52,7 @@
 
 
         <div th:unless="${error==null}">
-            <table class="table">
+            <table style="text-align:center" class="table">
                 <thead class="thead-dark">
                 <tr>
                     <th>Status code</th>
@@ -82,7 +70,21 @@
         </div>
 
         <div th:if="${error==null}">
-            <table class="table">
+
+            <div class="no-border">
+                <table>
+                    <tr>
+                        <td><h1><font color="Blue">Projects Information</font></h1></td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal"
+                                    data-target="#myModal">Add Project</button></td>
+                        </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <table style="text-align:center; border: 1px solid black;" class="table">
                 <thead class="thead-dark">
                 <tr>
                     <th>ID</th>

@@ -23,7 +23,7 @@
 </div>
 
 <div class="container m-5 pb-5">
-    <div class="no-border">
+    <div>
         <table>
             <tr>
                 <td><h1><font color="Red">Task Information</font></h1></td>
@@ -62,7 +62,7 @@
             </div>
         </div>
         <div th:unless="${error==null}">
-            <table class="table table-striped table-bordered table-hover table-condensed">
+            <table  style="text-align:center" class="table">
                 <thead>
                 <tr>
                     <td>Status code</td>
@@ -81,7 +81,7 @@
         </div>
 
         <div th:if="${error==null}">
-            <table class="table">
+            <table  style="text-align:center" class="table">
                 <thead class="thead-dark">
                 <tr>
                     <th>ID</th>

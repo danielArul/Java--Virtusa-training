@@ -23,16 +23,7 @@
 </div>
 
 
-<div class="container m-5 pb-5">
-    <div class="no-border">
-    <table >
-        <tr>
-            <td> <h1><font color="Red">Employee Information</font></h1></td>
-            <td><button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal" data-target="#myModal">Add Employee</button></td>
-        </tr>
-    </table>
-    </div>
-    <div class="jumbotron" >
+
 
         <!-- The Modal -->
         <div class="modal" id="myModal">
@@ -80,7 +71,7 @@
         </thead>
         <tbody>
         <tr  class="danger">
-            <td><span th:text="${error.statusCode}"></span></td>
+            <td ><span th:text="${error.statusCode}"></span></td>
             <td><span th:text="${error.body}"></span></td>
         </tr>
         </tbody>
@@ -90,12 +81,24 @@
 </div>
 
 <div th:if="${error==null}">
-    <table class="table">
+    <div class="container m-5 pb-5">
+
+    <div class="jumbotron" >
+    <div class="no-border">
+        <table>
+            <tr>
+                <td><h1><font color="Blue">Employee Information</font></h1></td>
+                <td><button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal" data-target="#myModal">Add Employee</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <table  style="text-align:center; border: 1px solid black;" class="table">
         <thead class="thead-dark">
         <tr>
-            <th>ID</th>
+            <th align="center">ID</th>
             <th>Name</th>
-            <th>E-mail</th>
+            <th align="center">E-mail</th>
             <th>Designation</th>
             <th>More Info</th>
         </tr>
@@ -111,30 +114,7 @@
         </tbody>
     </table>
 
-    <div class="viewmodal" id="viewModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
 
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">More Info</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body modal-footer">
-
-                    </form>
-                </div>
-
-                <!--                    &lt;!&ndash; Modal footer &ndash;&gt;-->
-                <!--                    <div class="modal-footer">-->
-                <!--                        <button type="button" class="btn btn-danger" data-dismiss="modal">Submit</button>-->
-                <!--                    </div>-->
-
-            </div>
-        </div>
-    </div>
 </div>
 
 </div>
