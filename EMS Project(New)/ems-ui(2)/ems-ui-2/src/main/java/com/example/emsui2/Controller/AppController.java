@@ -76,7 +76,7 @@ public class AppController extends WebSecurityConfigurerAdapter {
 
     @RequestMapping(value = "/")
     public  String loadIndex(){
-      return "home";
+      return "index";
   }
 
     @RequestMapping(value="/ems/employee" ,method = RequestMethod.POST)

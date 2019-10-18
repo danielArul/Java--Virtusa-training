@@ -22,9 +22,6 @@
     <a th:href="@{/home}" style="float:right" > <img th:src="@{/img/home.png}" height="50px" /></a>
 </div>
 
-
-
-
         <!-- The Modal -->
         <div class="modal" id="myModal">
             <div class="modal-dialog">
@@ -93,12 +90,12 @@
         </table>
     </div>
 
-    <table  style="text-align:center; border: 1px solid black;" class="table">
+    <table  style="border: 1px solid black;" class="table">
         <thead class="thead-dark">
         <tr>
-            <th align="center">ID</th>
+            <th>ID</th>
             <th>Name</th>
-            <th align="center">E-mail</th>
+            <th>E-mail</th>
             <th>Designation</th>
             <th>More Info</th>
         </tr>
@@ -109,7 +106,7 @@
             <td><span th:text="${emp.name}"></span></td>
             <td><span th:text="${emp.email}"></span></td>
             <td><span th:text="${emp.desig}"></span></td>
-            <td><a th:href="@{/employee/project/view/{eid}(eid=${emp.eid})}">Project</a></td>
+            <td><a th:href="@{/employee/project/view/{eid}(eid=${emp.eid})}">Click Here</a></td>
         </tr>
         </tbody>
     </table>

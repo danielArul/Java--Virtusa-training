@@ -23,18 +23,7 @@
 </div>
 
 <div class="container m-5 pb-5">
-    <div>
-        <table>
-            <tr>
-                <td><h1><font color="Red">Task Information</font></h1></td>
-                <td>
-                    <button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal"
-                            data-target="#myModal">Add Task</button></td>
-                    </button>
-                </td>
-            </tr>
-        </table>
-    </div>
+
      <div class="jumbotron" >
 
         <!-- The Modal -->
@@ -81,19 +70,33 @@
         </div>
 
         <div th:if="${error==null}">
-            <table  style="text-align:center" class="table">
+
+            <div>
+                <table>
+                    <tr>
+                        <td><h1><font color="Blue">Task Information</font></h1></td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal"
+                                    data-target="#myModal">Add Task</button></td>
+                        </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <table  style="text-align:center; border: 1px solid black;" class="table">
                 <thead class="thead-dark">
                 <tr>
-                    <th>ID</th>
+                    <th>Task ID</th>
                     <th>Task name</td>
-                    <th>More</th>
+
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="task: ${Tasks}">
                     <td><span th:text="${task.tid}"></span></td>
                     <td><span th:text="${task.tname}"></span></td>
-                    <td><a href="#view">view</a></td>
+
                 </tr>
                 </tbody>
             </table>

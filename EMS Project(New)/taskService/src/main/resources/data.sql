@@ -1,5 +1,5 @@
-insert into task(tname) values('Run');
-insert into task(tname) values('Walk');
-insert into task(tname) values('talk');
-insert into task(tname) values('Look');
-insert into task(tname) values('Hi');
+insert into task(tname) values('Develop Primary budget');
+insert into task(tname) values('Update current UI');
+insert into task(tname) values('Implement MySQL backend');
+insert into task(tname) values('Add project to docker');
+insert into task(tname) values('Add additional discount options');

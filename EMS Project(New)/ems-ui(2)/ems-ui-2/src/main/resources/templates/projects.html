@@ -89,14 +89,14 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>View</th>
+
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="proj: ${Projects}">
                     <td><span th:text="${proj.pid}"></span></td>
                     <td><span th:text="${proj.pname}"></span></td>
-                    <td><a href="@{/employee/project/view/task/{pid}(pid=${proj.pid})}">view</a></td>
+
                 </tr>
                 </tbody>
             </table>

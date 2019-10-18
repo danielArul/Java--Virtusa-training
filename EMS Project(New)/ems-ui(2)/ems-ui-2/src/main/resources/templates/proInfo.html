@@ -24,39 +24,43 @@
 <div class="container m-5 pb-5">
 
     <div class="no-border">
-        <table>
-            <tr>
-                <td><h1><font color="Red">Project Information</font></h1></td>
-                <td>
-                    <button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal"
-                            data-target="#myModal">Add Project</button></td>
-                </button>
-                </td>
-            </tr>
-        </table>
-    </div>
+
     <div class="jumbotron">
 
 
+        <table>
+            <tr>
+
+                <td> <a class="btn btn-success col-md-4 text-center" th:href="@{/employees}">Go to Employees page</a></td>
+                <td><h1><font color="Blue">Projects Assigned</font></h1></td>
+
+
+                </td>
+            </tr>
+        </table>
         <div th:if="${error==null}">
             <table class="table">
                 <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>View</th>
+                    <th>View Tasks</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="proj: ${projects}">
                     <td><span th:text="${proj.pid}"></span></td>
                     <td><span th:text="${proj.pname}"></span></td>
-                    <td><a th:href="@{/employee/project/view/task/{eid}/{pid}(eid=${eid},pid=${proj.pid})}">view</a></td>
+                    <td><a th:href="@{/employee/project/view/task/{eid}/{pid}(eid=${eid},pid=${proj.pid})}">Click Here</a></td>
                 </tr>
                 </tbody>
             </table>
         </div>
+
+
+
     </div>
+</div>
 </div>
 
 

@@ -21,21 +21,17 @@
     <a th:href="@{/operations}">Operations</a>
     <a th:href="@{/home}" style="float:right" > <img th:src="@{/img/home.png}" height="50px" /></a>
 </div>
-<div class="container m-5 pb-5">
 
-    <div class="no-border">
-        <table>
-            <tr>
-                <td><h1><font color="Red">Project Information</font></h1></td>
-                <td>
-                    <button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal"
-                            data-target="#myModal">Add Project</button></td>
-                </button>
-                </td>
-            </tr>
-        </table>
-    </div>
+<div class="container m-5 pb-5">
     <div class="jumbotron">
+
+        <div class="no-border">
+            <table>
+                <tr>
+                    <td><h1><font color="Blue">Tasks Assigned</font></h1></td>
+                </tr>
+            </table>
+        </div>
 
 
         <div th:if="${error==null}">
@@ -44,18 +40,21 @@
                 <tr>
                     <th>ID</th>
                     <th>Task name</td>
-                    <th>More</th>
+
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="task: ${tasks}">
                     <td><span th:text="${task.tid}"></span></td>
                     <td><span th:text="${task.tname}"></span></td>
-                    <td><a href="#view">view</a></td>
+
                 </tr>
                 </tbody>
             </table>
+
         </div>
+
+        <a class="btn btn-success col-md-4 text-center" th:href="@{/projects}">Go to Projects page</a>
     </div>
 </div>
 

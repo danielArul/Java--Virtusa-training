@@ -33,6 +33,10 @@ input[type=submit] {
 
 }
 
+h1{
+    font-weight: bold;
+}
+
 table, td, th {
 
 }
@@ -40,6 +44,7 @@ table, td, th {
 table {
   border-collapse: collapse;
   width: 100%;
+  text-align:center;
 }
 
 
@@ -49,6 +54,7 @@ table {
   overflow: hidden;
   background-color: #DD1E1E;
   border-radius: 5px 20px 5px;
+  margin: 20px;
 }
 
 #topnav a {

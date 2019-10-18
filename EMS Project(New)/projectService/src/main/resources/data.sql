@@ -1,7 +1,7 @@
-insert into project(pname) values('Google');
-insert into project(pname) values('Yahoo');
-insert into project(pname) values('Bing');
-insert into project(pname) values('AOL');
+insert into project(pname) values('MDS');
+insert into project(pname) values('Philips');
+insert into project(pname) values('Microsoft');
+insert into project(pname) values('Nawaloka');
 
 
 
