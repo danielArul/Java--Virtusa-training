@@ -14,23 +14,28 @@
 </head>
 <body background="bg.jpg">
 
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
 <div th:id="topnav">
     <a th:href="@{/employees}">Employees</a>
     <a th:href="@{/projects}">Projects</a>
     <a th:href="@{/tasks}">Tasks</a>
     <a th:href="@{/operations}">Operations</a>
     <a th:href="@{/home}" style="float:right" > <img th:src="@{/img/home.png}" height="50px" /></a>
+    <a style="float:right; margin: 10px 10px 10px;" href="/logout" class="btn btn-warning">SignOut</a>
 </div>
 
 <div class="container m-5 pb-5">
     <div class="jumbotron">
 
         <div class="no-border">
-            <table>
-                <tr>
-                    <td><h1><font color="Blue">Tasks Assigned</font></h1></td>
-                </tr>
-            </table>
+            <a class="btn btn-success col-md-4 text-center" onclick="goBack()">Go to previous page</a>
+            <h1 align="center"><font color="Blue">Tasks Assigned</font></h1>
+
         </div>
 
 
@@ -54,7 +59,7 @@
 
         </div>
 
-        <a class="btn btn-success col-md-4 text-center" th:href="@{/projects}">Go to Projects page</a>
+
     </div>
 </div>
 

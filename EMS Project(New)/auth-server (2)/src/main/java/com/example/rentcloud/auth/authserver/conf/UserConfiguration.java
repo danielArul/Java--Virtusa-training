@@ -13,7 +13,7 @@ public class UserConfiguration extends GlobalAuthenticationConfigurerAdapter {
 
     @Override
     public void init(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("Admin").password(passwordEncoder.encode("admin")).roles("USER","ADMIN","MANAGER").authorities("CAN_READ","CAN_WRITE","CAN_DELETE").and().
+        auth.inMemoryAuthentication().withUser("Admin").password(passwordEncoder.encode("admin")).authorities("ROLE_MANAGER","CAN_READ","CAN_WRITE","CAN_DELETE").and().
                 withUser("User").password(passwordEncoder.encode("user")).roles("USER").authorities("CAN_READ","CAN_WRITE");
     }
 

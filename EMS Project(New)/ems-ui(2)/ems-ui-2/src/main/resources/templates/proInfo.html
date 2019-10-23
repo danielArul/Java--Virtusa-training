@@ -20,6 +20,7 @@
     <a th:href="@{/tasks}">Tasks</a>
     <a th:href="@{/operations}">Operations</a>
     <a th:href="@{/home}" style="float:right" > <img th:src="@{/img/home.png}" height="50px" /></a>
+    <a style="float:right; margin: 10px 10px 10px;" href="/logout" class="btn btn-warning">SignOut</a>
 </div>
 <div class="container m-5 pb-5">
 
@@ -28,16 +29,11 @@
     <div class="jumbotron">
 
 
-        <table>
-            <tr>
-
-                <td> <a class="btn btn-success col-md-4 text-center" th:href="@{/employees}">Go to Employees page</a></td>
-                <td><h1><font color="Blue">Projects Assigned</font></h1></td>
+             <a class="btn btn-success col-md-4 text-center" th:href="@{/employees}">Go to Employees page</a>
+              <h1 align="center"><font color="Blue">Projects Assigned</font></h1>
 
 
-                </td>
-            </tr>
-        </table>
+
         <div th:if="${error==null}">
             <table class="table">
                 <thead class="thead-dark">

@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
@@ -39,7 +40,10 @@ public class AppController extends WebSecurityConfigurerAdapter {
                 .antMatchers("/css/**", "/","/img/**")
                 .permitAll()
                 .anyRequest()
-                .authenticated();
+                .authenticated()
+                .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/")
+                .deleteCookies("KSESSION","JSESSIONID").invalidateHttpSession(true)
+                .clearAuthentication(true);
     }
 
     @Autowired
@@ -49,6 +53,8 @@ public class AppController extends WebSecurityConfigurerAdapter {
     public String employee(Model model){
         System.out.println(uIservice.allEmployees());
         model.addAttribute("Employees",uIservice.allEmployees());
+        model.addAttribute("username",AccessTokenConfig.getPrincipalName());
+        model.addAttribute("privilege",AccessTokenConfig.getAuthorities());
         return "employees";
     }
 
@@ -56,6 +62,8 @@ public class AppController extends WebSecurityConfigurerAdapter {
     public String project(Model model){
         System.out.println(uIservice.allProjects());
         model.addAttribute("Projects",uIservice.allProjects());
+        model.addAttribute("username",AccessTokenConfig.getPrincipalName());
+        model.addAttribute("privilege",AccessTokenConfig.getAuthorities());
         return "projects";
     }
 
@@ -65,11 +73,16 @@ public class AppController extends WebSecurityConfigurerAdapter {
     public String task(Model model){
         System.out.println(uIservice.allTasks());
         model.addAttribute("Tasks",uIservice.allTasks());
+        model.addAttribute("username",AccessTokenConfig.getPrincipalName());
+        model.addAttribute("privilege",AccessTokenConfig.getAuthorities());
         return "tasks";
     }
 
     @RequestMapping(value = "/home")
-    public  String loadHome(){
+    public  String loadHome(Model model){
+
+        model.addAttribute("username",AccessTokenConfig.getPrincipalName());
+        model.addAttribute("privilege",AccessTokenConfig.getAuthorities());
         return "home";
     }
 
@@ -114,16 +127,23 @@ public class AppController extends WebSecurityConfigurerAdapter {
             tasks.add(e);
         }
 
+        model.addAttribute("username",AccessTokenConfig.getPrincipalName());
+        model.addAttribute("privilege",AccessTokenConfig.getAuthorities());
+
         model.addAttribute("employees",employees);
         model.addAttribute("projects",projects);
         model.addAttribute("tasks", tasks);
         return "operations";
+
+
     }
 
     @RequestMapping(value="/ems/operations", method = RequestMethod.POST)
     public String operations(@ModelAttribute EPTdto eptdto){
         System.out.println(eptdto);
         uIservice.addOperation(eptdto);
+
+
         return "redirect:/operations";
 
     }

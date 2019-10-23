@@ -3,6 +3,7 @@ package com.steffan.projectService.controller;
 import com.steffan.projectService.model.Project;
 import com.steffan.projectService.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class ProjectController {
         return projectService.getAllProjects();
     }
 
+    @PreAuthorize("hasRoles(ROLE_MANAGER)")
     @RequestMapping(value="/ems/projects", method= RequestMethod.POST )
     public void addProject(@RequestBody Project project){
         projectService.addProject(project);
