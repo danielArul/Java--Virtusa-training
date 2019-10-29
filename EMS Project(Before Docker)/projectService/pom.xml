@@ -11,7 +11,6 @@
 	<groupId>com.steffan</groupId>
 	<artifactId>projectService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
 	<name>projectService</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -69,7 +68,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>projectService</finalName>
 	</build>
 
 </project>

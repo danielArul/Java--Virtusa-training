@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--    external css-->
+    <link rel="stylesheet" th:href="@{/css/styleMe.css}">
+    <title>EMS</title>
+</head>
+<body background="bg.jpg">
+
+<div th:id="topnav">
+    <a th:href="@{/employees}">Employees</a>
+    <a th:href="@{/projects}">Projects</a>
+    <a th:href="@{/tasks}">Tasks</a>
+    <a th:href="@{/operations}">Operations</a>
+    <a th:href="@{/home}" style="float:right" > <img th:src="@{/img/home.png}" height="50px" /></a>
+    <a style="float:right; margin: 10px 10px 10px;" href="/logout" class="btn btn-warning">SignOut</a>
+</div>
+<div class="container m-5 pb-5">
+
+    <div class="jumbotron">
+
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Create Project</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body modal-footer">
+                        <form th:action="@{/ems/project}" method="post">
+                            <label for="name">Project Name</label>
+                            <input type="text" id="name" name="pname" placeholder="Project name..">
+
+
+                            <button class="btn btn-success" type="submit" value="Submit">Create</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div th:unless="${error==null}">
+            <table style="text-align:center" class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Status code</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="danger">
+                    <td><span th:text="${error.statusCode}"></span></td>
+                    <td><span th:text="${error.body}"></span></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div th:if="${error==null}">
+
+            <div class="no-border">
+                <table>
+                    <tr>
+                        <td><h1><font color="Blue">Projects Information</font></h1></td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal"
+                                    data-target="#myModal" th:if="${privilege==true}">Add Project</button></td>
+                        </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <table style="text-align:center; border: 1px solid black;" class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="proj: ${Projects}">
+                    <td><span th:text="${proj.pid}"></span></td>
+                    <td><span th:text="${proj.pname}"></span></td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
