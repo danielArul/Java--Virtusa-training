@@ -163,13 +163,13 @@ public class AppController extends WebSecurityConfigurerAdapter {
         HttpEntity<String> req1=new HttpEntity<>(header);
         RestTemplate restTemplate=new RestTemplate();
 
-        ResponseEntity<List<Integer>> response=restTemplate.exchange("http://localhost:8089/ems/employee/project/tasks/" + eid + "/" + pid, HttpMethod.GET, req1, new ParameterizedTypeReference<List<Integer>>() {
+        ResponseEntity<List<Integer>> response=restTemplate.exchange("http://demployee:8089/ems/employee/project/tasks/" + eid + "/" + pid, HttpMethod.GET, req1, new ParameterizedTypeReference<List<Integer>>() {
         });
         List<Integer> tids=response.getBody();
 
         System.out.println(tids);
         HttpEntity<List<Integer>> req2=new HttpEntity<>(tids,header);
-        ResponseEntity<List<Task>> response1=restTemplate.exchange("http://localhost:8083/ems/project/tasks", HttpMethod.POST, req2, new ParameterizedTypeReference<List<Task>>() {
+        ResponseEntity<List<Task>> response1=restTemplate.exchange("http://dtask:8083/ems/project/tasks", HttpMethod.POST, req2, new ParameterizedTypeReference<List<Task>>() {
         });
       List<Task> tasks= new ArrayList<>();
       tasks=response1.getBody();

@@ -27,7 +27,7 @@ public class UIservice {
         header.add("Authorization","bearer "+ GetToken.getToken());
         HttpEntity request=new HttpEntity(header);
         RestTemplate restTemplate=new RestTemplate();
-        ResponseEntity<List<Employee>> response=restTemplate.exchange("http://localhost:8089/ems/employees", HttpMethod.GET, request, new ParameterizedTypeReference<List<Employee>>() {
+        ResponseEntity<List<Employee>> response=restTemplate.exchange("http://demployee:8089/ems/employees", HttpMethod.GET, request, new ParameterizedTypeReference<List<Employee>>() {
         });
 
 
@@ -46,7 +46,7 @@ public class UIservice {
         RestTemplate restTemplate=new RestTemplate();
 
         HttpEntity<Employee> request=new HttpEntity<>(employee,header);
-        restTemplate.postForEntity("http://localhost:8089/ems/employees",request,Employee.class);
+        restTemplate.postForEntity("http://demployee:8089/ems/employees",request,Employee.class);
 
         return "redirect:/employee";
     }
@@ -56,7 +56,7 @@ public class UIservice {
         header.add("Authorization","bearer "+ GetToken.getToken());
         HttpEntity request=new HttpEntity(header);
         RestTemplate restTemplate=new RestTemplate();
-        ResponseEntity<List<Project>> response=restTemplate.exchange("http://localhost:8084/ems/projects", HttpMethod.GET, request, new ParameterizedTypeReference<List<Project>>() {
+        ResponseEntity<List<Project>> response=restTemplate.exchange("http://dproject:8084/ems/projects", HttpMethod.GET, request, new ParameterizedTypeReference<List<Project>>() {
         });
 
 
@@ -74,7 +74,7 @@ public class UIservice {
         RestTemplate restTemplate=new RestTemplate();
 
         HttpEntity<Project> request=new HttpEntity<>(project,header);
-        restTemplate.postForEntity("http://localhost:8084/ems/projects",request,Project.class);
+        restTemplate.postForEntity("http://dproject:8084/ems/projects",request,Project.class);
 
         return "redirect:/projects";
     }
@@ -85,7 +85,7 @@ public class UIservice {
         header.add("Authorization","bearer "+ GetToken.getToken());
         HttpEntity request=new HttpEntity(header);
         RestTemplate restTemplate=new RestTemplate();
-        ResponseEntity<List<Task>> response=restTemplate.exchange("http://localhost:8083/ems/tasks", HttpMethod.GET, request, new ParameterizedTypeReference<List<Task>>() {
+        ResponseEntity<List<Task>> response=restTemplate.exchange("http://dtask:8083/ems/tasks", HttpMethod.GET, request, new ParameterizedTypeReference<List<Task>>() {
         });
 
 
@@ -105,7 +105,7 @@ public class UIservice {
         RestTemplate restTemplate=new RestTemplate();
 
         HttpEntity<Task> request=new HttpEntity<>(task,header);
-        restTemplate.postForEntity("http://localhost:8083/ems/tasks",request,Task.class);
+        restTemplate.postForEntity("http://dtask:8083/ems/tasks",request,Task.class);
 
         return "redirect:/tasks";
     }
@@ -120,7 +120,7 @@ public class UIservice {
         RestTemplate restTemplate=new RestTemplate();
 
         HttpEntity<EPTdto> request=new HttpEntity<>(epTdto,header);
-        restTemplate.postForEntity("http://localhost:8089/ems/operation",request,EPTdto.class);
+        restTemplate.postForEntity("http://demployee:8089/ems/operation",request,EPTdto.class);
     }
 
     public List<Project> getEmpProjects(Integer eid){
@@ -131,7 +131,7 @@ public class UIservice {
         RestTemplate restTemplate=new RestTemplate();
 
         HttpEntity<String> request=new HttpEntity<>(header);
-        ResponseEntity<List<Project>> response=restTemplate.exchange("http://localhost:8084/ems/employee/projects/" + eid, HttpMethod.GET, request, new ParameterizedTypeReference<List<Project>>() {
+        ResponseEntity<List<Project>> response=restTemplate.exchange("http://dproject:8084/ems/employee/projects/" + eid, HttpMethod.GET, request, new ParameterizedTypeReference<List<Project>>() {
         });
         List<Project> projects=response.getBody();
 
